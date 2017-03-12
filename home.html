@@ -1,0 +1,20 @@
+<div class="row">
+  <div class=" large-12 small-12 columns"> 
+<form class="form-inline">
+<label>Quickly find a source you are looking for:</label>
+      <input ng-model="query" type="text" placeholder="Filter by Name of Source" autofocus>
+ </form>
+</div>
+</div>
+
+
+<div class="row masonry extra-padding">
+<div class="item large-6 small-6 thumbnail" ng-repeat="news in newsChannel.sources | filter: { name: query  }  | orderBy: 'name'  " ng-click="fetchSources(news.id,news.name )" >
+
+ <h3>{{news.name}}</h3> 
+ <img ng-src="{{news.urlsToLogos.small}}" alt="{{news.name}}"/> 
+  <p>{{news.description}}</p>
+  <p class="view-more">Click here to view more</p> 
+ 
+</div> 
+</div>

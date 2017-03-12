@@ -1,0 +1,20 @@
+<div class="row">
+
+<div id="news-wrapper" class=" large-12 columns ">
+ <h3>Top 10 headlines from: {{ header }}</h3>
+</div>
+ 
+<div class="row">
+  <div ng-repeat="x in newsDescription track by $index" class=" large-12 columns " style="padding-bottom:20px;">
+  <div class="image-wrapper large-2 columns ">
+  <img style=" "class="headline-img" ng-src="{{x.urlToImage}}" /> 
+   </div>
+   <div class="info-wrapper large-10 columns">
+  <a href="{{ x.url }}" target="_blank" > {{ x.title }} </a><br/>
+  
+   {{ x.publishedAt }}  </div>  
+   </div> 
+ 
+ 
+</div>
+</div>
